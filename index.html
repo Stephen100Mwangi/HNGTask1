@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Task1.css">
+</head>
+<body>
+    <hr style="width: 70%;">
+    <h2>Slack   Name:</h2>
+    <dl>
+        <dt>Slack Name:</dt>
+        <dd>Stephen Mwangi</dd>
+        <dt>Slack Display Picture:</dt>
+        <dd><img src="C:\Users\W\Desktop\Slack\IMG20230226200344.jpg" alt="Steve"></dd>
+        <dt>Current Day of the Week:</dt>
+        <dd id="day"></dd>
+        <dt>Currrent UTC Time:</dt>
+        <dd id="miliSec"></dd>
+        <dt>Track:</dt>
+        <dd>Frontend</dd>
+        <dt>Github URL:</dt>
+        <dd><a href="https://stephen100mwangi.github.io/HNGTask1/"></a></dd>
+    </dl>
+    <script>
+        let today = new Date();
+        let UTCday = document.getElementById("day");
+        let day = today.getUTCDay();
+        let UTCTime = today.getUTCMilliseconds();
+        
+        
+        let miliSec = document.getElementById("miliSec")
+        miliSec.textContent = UTCTime;
+        function Setdata(params) {
+            setInterval(() => {
+                let today = new Date();
+                let UTCTime = today.getUTCMilliseconds();
+                miliSec.textContent = UTCTime;
+            }, 1000);
+        }
+        Setdata();
+        switch (day) {
+            case 0:
+                UTCday.textContent = "Sunday";
+                break;
+            case 1:
+                UTCday.textContent = "Monday";
+                break;
+            case 2:
+                UTCday.textContent = "Tuesday";
+                break;
+            case 3:
+                UTCday.textContent = "Wednesday";
+                break;
+            case 4:
+                UTCday.textContent = "Thursday";
+                break;
+            case 5:
+                UTCday.textContent = "Friday";
+                break;
+            case 6:
+                UTCday.textContent = "Saturday";
+                break;
+            default:
+                break;
+        }
+    </script>
+</body>
+</html>
